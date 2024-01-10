@@ -34,4 +34,11 @@ RSpec.describe "the admin invoices show" do
       expect(page).to have_content("Packaged")
     end
   end
+
+  it "displays the total invoice revenue" do
+    visit admin_invoice_path(@incomplete_invoice1)
+    
+    total_invoice_revenue = number_to_currency(@incomplete_invoice1.total_revenue / 100.0)
+    expect(page).to have_content("Total Revenue: #{total_invoice_revenue}")
+  end
 end

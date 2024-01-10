@@ -45,6 +45,9 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = true
 
+  # Added NumberHelper to simplify testing currency calculations.
+  config.include ActionView::Helpers::NumberHelper
+
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
