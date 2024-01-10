@@ -1,9 +1,9 @@
-<h1>Invoice Details</h1>
+<h1 style="text-align: center;"><strong>Invoice #:</strong> <%= @invoice.id %></h1>
 
 <div>
-  <p><strong>Invoice ID:</strong> <%= @invoice.id %></p>
   <p><strong>Status:</strong> <%= @invoice.status %></p>
-  <p><strong>Created At:</strong> <%= @invoice.created_at.strftime("%A, %B %d, %Y") %></p>
+  <p><strong>Created On:</strong> <%= @invoice.created_at.strftime("%A, %B %d, %Y") %></p>
+  <p><strong>Total Revenue:</strong> <%= number_to_currency(@invoice.total_revenue / 100.0) %></h3>
   <p><strong>Customer Name:</strong> <%= @invoice.customer.first_name %> <%= @invoice.customer.last_name %></p>
 </div>
 
